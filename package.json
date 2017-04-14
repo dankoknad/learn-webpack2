@@ -1,0 +1,14 @@
+{
+  "name": "webpack2-101",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "scripts": {
+		"dev": "webpack -d --watch",
+		"prod": "webpack -p"
+	},
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.4.0"
+  }
+}
