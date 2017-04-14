@@ -13,15 +13,22 @@ module.exports = {
 			{
 				test: /\.(css|scss)$/,
 				use: ExtractTextPlugin.extract({
-					fallback: "style-loader",
+					fallback: 'style-loader',
 					use: [
-						"css-loader",
-						"sass-loader"
+						'css-loader',
+						'sass-loader'
 					],
-					publicPath: "/dist"
+					publicPath: '/dist'
 	      })								
 			}
 		]
+	},
+	devServer: {
+		contentBase: path.join(__dirname, 'dist'),
+		compress: true,
+		port: 3030,
+		stats: 'errors-only',
+		open: true		
 	},
 	plugins: [new HtmlWebpackPlugin({
 		title: 'Webpack 2 is cool',
@@ -32,7 +39,7 @@ module.exports = {
 		}
 	}),
 	new ExtractTextPlugin({
-		filename: "bundle.css",
+		filename: 'bundle.css',
 		disable: false,
 		allChunks: true
 	})]

@@ -2,7 +2,9 @@ $orange: orange;
 $w: #fff;
 
 div {
-	color: $w;
+	padding: 10px;
+	color: $orange;
 	font-size: 22px;
 	text-decoration: underline;
+	background: lightgreen;
 }
