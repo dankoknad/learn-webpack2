@@ -1,4 +1,12 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './components/App';
+
 import './app.css';
 import './app.scss';
 
-console.log("Hello from app.js and webpack");
+ReactDOM.render(
+  <App emotion="Love" />,
+  document.getElementById('app')
+);

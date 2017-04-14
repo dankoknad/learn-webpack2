@@ -20,6 +20,10 @@ module.exports = {
 					],
 					publicPath: '/dist'
 	      })								
+			},{
+				test: /\.(js|jsx)$/,
+				use: ['babel-loader'],
+				exclude: /node_modules/							
 			}
 		]
 	},
