@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev": "webpack-dev-server",
     "prod": "webpack -p"
   },
   "license": "MIT",
@@ -15,6 +15,7 @@
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.4.0"
+    "webpack": "^2.4.0",
+    "webpack-dev-server": "^2.4.2"
   }
 }
