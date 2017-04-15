@@ -5,7 +5,7 @@
   "repository": {},
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "yarn run cleanup && webpack -p",
+    "prod": "yarn run cleanup && NODE_ENV=production webpack -p",
     "cleanup": "rimraf ./dist/*"
   },
   "license": "MIT",
