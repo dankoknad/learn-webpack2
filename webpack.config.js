@@ -4,7 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-		app: './src/app.js'
+		app: './src/app.js',
+		contact: './src/contact.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -26,9 +27,6 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				use: 'babel-loader',
 				exclude: /node_modules/							
-			},{
-				test: /\.pug$/,
-				use: 'pug-loader'
 			}
 		]
 	},
@@ -42,14 +40,24 @@ module.exports = {
 		stats: 'errors-only',
 		open: true		
 	},
-	plugins: [new HtmlWebpackPlugin({
-		title: 'Webpack 2 is cool',
-    template: './src/index.pug',
-		hash: true
-	}),
-	new ExtractTextPlugin({
-		filename: '[name].bundle.css',
-		disable: false,
-		allChunks: true
-	})]
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: 'App is here',
+			template: './src/index.ejs',
+			excludeChunks: ['contact'],
+			hash: true
+		}),
+		new HtmlWebpackPlugin({
+			title: 'Webpack 2 is cool',
+			template: './src/contact.ejs',
+			filename: 'contact.html',
+			chunks: ['contact'],
+			hash: true
+		}),
+		new ExtractTextPlugin({
+			filename: '[name].bundle.css',
+			disable: false,
+			allChunks: true
+		})
+	]
 }
