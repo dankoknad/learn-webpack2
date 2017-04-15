@@ -1,5 +1,7 @@
 body {
 	background: lightseagreen;
+	font-size: 50px;
+	font-style: italic;
 	padding: 25px;
-	color: red;
+	color: #fff;
 }
