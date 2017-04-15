@@ -5,7 +5,8 @@
   "repository": {},
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "yarn run cleanup && webpack -p",
+		"cleanup": "rimraf ./dist/*"
   },
   "license": "MIT",
   "devDependencies": {
@@ -19,6 +20,7 @@
     "node-sass": "^4.5.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.0",

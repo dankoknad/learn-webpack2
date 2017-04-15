@@ -3,10 +3,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry: './src/app.js',
+	entry: {
+		app: './src/app.js',
+		contact: './src/contact.js'
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'app.bundle.js'		
+		filename: '[name].bundle.js'		
 	},
 	module: {
 		rules: [
@@ -40,13 +43,24 @@ module.exports = {
 	plugins: [new HtmlWebpackPlugin({
 		title: 'Webpack 2 is cool',
     template: './src/index.ejs',
+		excludeChunks: ['contact'],
+		hash: true,
+		minify: {
+			collapseWhitespace: false
+		}
+	}),
+	new HtmlWebpackPlugin({
+		title: 'Contact Page',
+    template: './src/contact.ejs',
+		filename: 'contact.html',
+		chunks: ['contact'],
 		hash: true,
 		minify: {
 			collapseWhitespace: false
 		}
 	}),
 	new ExtractTextPlugin({
-		filename: 'bundle.css',
+		filename: '[name].bundle.css',
 		disable: false,
 		allChunks: true
 	})]

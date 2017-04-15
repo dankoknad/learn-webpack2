@@ -10,3 +10,5 @@ ReactDOM.render(
   <App emotion="Love" />,
   document.getElementById('app')
 );
+
+console.log("app page");
