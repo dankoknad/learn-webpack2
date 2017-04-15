@@ -2,4 +2,9 @@ body {
 	background: #f0f;
 	padding: 25px;
 	font-style: italic;
+	background-image: url('img/webpack-logo.svg');
+	background-size: 30px;
+}
+img {
+	vertical-align: middle;
 }

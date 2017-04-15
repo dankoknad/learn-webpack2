@@ -4,4 +4,6 @@ body {
 	font-style: italic;
 	padding: 25px;
 	color: #fff;
+	background-image: url('img/react-logo.svg');
+	background-size: 20px;
 }
